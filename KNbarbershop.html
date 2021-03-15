@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset = "UTF-8">
+<title>KNbarbershop</title>
+<link rel="stylesheet" href="KNStyle.css">
+
+</head>
+<body>
+
+  <header class="main-header">
+    <nav class="main-navigation">
+      <ul class="site-navigation">
+        <li><a href="https://homing.yescoding.ru">Информация</a></li>
+        <li><a href="https://homing.yescoding.ru">Новости</a></li>
+        <li><a href="https://homing.yescoding.ru">Прайс-лист</a></li>
+        <li><a href="https://homing.yescoding.ru">Магазин</a></li>
+        <li><a target="_blank" href="https://homing.yescoding.ru">Контакты</a></li>
+  </ul>
+  <ul class="user-navigation">
+    <li><button onclick="modalShow()" class="login-link">Вход</button></li>
+  </ul>
+</nav>
+</header>
+
+
+  <main>
+    <div class="bgimage">
+<h1>Барбершоп <br> "Бородинский"</h1>
+<section>
+       <ul class="preim">
+          <li><h3>Быстро</h3>
+            <div class="romb"></div>
+             <p>Мы делаем свою работу быстро!</p>
+                    </li>
+          <li><h3>Круто</h3>
+            <div class="romb"></div>
+             <p>Забудьте, как вы стриглись раньше.</p>
+                   </li>
+          <li><h3>Дорого</h3>
+            <div class="romb"></div>
+             <p>Наши мастера - профессионалы своего дела.</p>
+                   </li>
+  </ul>
+</section>
+<div class="newsgallery">
+<section>
+  <h2>Новости</h2>
+  <ul>
+      <li><p>Нам наконец завезли музыкальный проигрыватель!</p>
+              <time datetime="2020-11-14">14 ноября.</time></li>
+      <li><p>В нашей команде пополнение.</p>
+              <time>9 ноября.</time></li>
+  </ul>
+  <a href="https://homing.yescoding.ru">Все новости</a>
+</section>
+<section>
+  <h2>Фотогалерея</h2>
+  <img id="slider" width="280px" height="160px" src="https://million-wallpapers.ru/wallpapers/2/52/12048354056014544355/osen-listya-derevya.jpg"/>
+  <div class="buttongallery">
+  <button onclick="prev()">Назад</button>
+  <button onclick="next()">Вперед</button>
+  </div>
+
+</section>
+</div>
+
+<div class="newsgallery">
+  <section>1
+  </section>
+  <section>2
+  </section>
+</div>
+</main>
+<footer>
+  <div class="footerContent">
+     <div><p>Barbershop "Borodinski"<br>
+             Адрес: г.Москва<br>
+             Телефон: +7 (800) 555-35-35</p>
+          <button>Как проехать?</button>
+    </div>
+     <div class="footerCenter"><p>Давайте дружить!</p>
+          <ul>
+                <li><a href="https://vk.com/"></a></li>
+                <li><a href="https://ru-ru.facebook.com"><img width="50px" height="50px" src="https://www.pinclipart.com/picdir/big/364-3648099_facebook-logo-red-transparent-fb-icon-white-png.png"/></a></li>
+                <li><a href="https://www.instagram.com"><img width="50px" height="50px" src="https://www.pinclipart.com/picdir/big/108-1080294_dreaming-clipart-sleepy-brain-numero-seis-en-cuadrado.png"/></a></li>
+              </ul>
+            </div>
+            <div class="footerRight">
+              <div>
+              <p>Сайт создан:</p>
+              <a href="https://yescoding.ru">yescoding.ru</a>
+              </div>
+            </div>
+          </div>
+          </footer>
+
+          <section class="modal-login modal">
+            <button onclick="modalClose()" class="modal-close">Закрыть</button>
+            <h2>Вход в личный кабинет</h2>
+            <p class="modal-description">Введите логин и пароль
+                        для входа в Ваш кабинет пользователя</p>
+            <form class="login-form">
+              <div><input class="login-icon-user" type="text" placeholder="Введите логин" required></div>
+              <div><input class="login-icon-password" type="password" placeholder="Введите пароль" required></div>
+              <div class="login-help">
+                <label>
+                  <input type="checkbox"><span>Запомнить меня</span>
+                </label>
+                <a href="#">Я забыл пароль</a>
+              </div>
+              <button class="modal-login-button">Войти</button>
+            </form>
+            <a class="registration" href="">Зарегистрироваться</a>
+          </section>
+       <script>
+       let images = [
+         "https://million-wallpapers.ru/wallpapers/2/52/12048354056014544355/osen-listya-derevya.jpg",
+         "https://avatars.mds.yandex.net/get-zen_doc/1925593/pub_5e885e70d421bb7d86282ca6_5e88649ded5b9b19f3bdfc00/scale_1200",
+         "https://static.tildacdn.com/tild3465-3534-4639-b866-656163353832/00606.jpg"
+       ];
+       let active = 0;
+       let slide = document.getElementById("slider");
+       function next(){
+         active++;
+         if(active >= images.length){
+           active = 0;
+         }
+         slide.src = images[active];
+       }
+       function prev(){
+         active--;
+         if(active < 0){
+           active = images.length-1;
+         }
+         slide.src = images[active];
+         //дз на 14.2: попробовать написать функцию prev()
+       }
+
+      let PopUp = document.querySelector(".modal");
+      function modalShow(){
+      PopUp.classList.add("modal-show");
+    }
+      function modalClose(){
+        PopUp.classList.remove("modal-show");
+      }
+       </script>
+        </body>
+        </html>
